@@ -84,8 +84,8 @@
   .project-type { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
   .project-title { font-family: var(--font-display); font-size: 1.4rem; color: var(--text); }
   .proj-thumb { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition: opacity 0.3s; }
-.proj-hover-video { position:absolute; inset:0; opacity:0; transition:opacity 0.4s; pointer-events:none; }
-.proj-hover-video iframe { width:100%; height:100%; }
+.proj-hover-video { position:absolute; inset:0; opacity:0; transition:opacity 0.4s; pointer-events:none; overflow:hidden; }
+.proj-hover-video iframe { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:177.78%; height:177.78%; pointer-events:none; }
 .project-card:hover .proj-thumb { opacity:0; }
 .project-card:hover .proj-hover-video { opacity:1; }
 #proj-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:2000; display:none; align-items:center; justify-content:center; }

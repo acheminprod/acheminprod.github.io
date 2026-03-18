@@ -24,7 +24,7 @@
   body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-weight: 300; overflow-x: hidden; cursor: none; }
 
   .cursor { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); }
-  .cursor-ring { width: 80px; height: 80px; border: 1.5px solid rgba(255,106,26,0.5); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9998; transition: transform 0.15s; backdrop-filter: invert(0.08) blur(1px); }
+  .cursor-ring { width: 80px; height: 80px; border: 1.5px solid rgba(255,106,26,0.5); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9998; transition: transform 0.15s; backdrop-filter: invert(1) saturate(1.5); }
 
   body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9000; opacity: 0.6; }
 
@@ -451,7 +451,7 @@ const ring = document.getElementById('cursor-ring');
 let rx = 0, ry = 0;
 document.addEventListener('mousemove', e => {
   cursor.style.transform = `translate(${e.clientX-4}px,${e.clientY-4}px)`;
-  rx += (e.clientX-40-rx)*0.35; ry += (e.clientY-40-ry)*0.35;
+  rx += (e.clientX-30-rx)*0.5; ry += (e.clientY-30-ry)*0.5;
   ring.style.transform = `translate(${rx}px,${ry}px)`;
 });
 
